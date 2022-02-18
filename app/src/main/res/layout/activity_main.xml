@@ -162,12 +162,12 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#359C47"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="14dp"
-                android:layout_gravity="center_vertical"
                 android:background="@drawable/option1"
-                android:text="Cancel my order" />
+                android:text="Cancel my order"
+                android:textColor="#359C47" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -176,8 +176,8 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/option1"
                 android:text="Order not confirmed yet"
-                android:textColor="#359C47"
                 android:textAlignment="center"
+                android:textColor="#359C47"
                 android:textSize="14dp" />
 
             <LinearLayout

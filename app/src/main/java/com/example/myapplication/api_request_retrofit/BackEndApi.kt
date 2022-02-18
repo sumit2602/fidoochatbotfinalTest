@@ -1,7 +1,6 @@
 package com.example.myapplication.api_request_retrofit
 
-import com.example.myapplication.Models.ChatCancelModel
-import com.example.myapplication.Models.cancelStatus.CancelOrderResponse
+import com.example.myapplication.Models.cancelStatus.ChatCancelModel
 import com.example.myapplication.Models.orderStatus.OrderStatusResponse
 import retrofit2.Call
 import retrofit2.http.Field

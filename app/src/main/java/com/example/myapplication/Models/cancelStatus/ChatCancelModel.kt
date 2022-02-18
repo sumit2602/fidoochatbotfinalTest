@@ -1,4 +1,4 @@
-package com.example.myapplication.Models
+package com.example.myapplication.Models.cancelStatus
 
 
 import com.google.gson.annotations.SerializedName

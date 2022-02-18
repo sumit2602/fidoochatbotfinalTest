@@ -3,8 +3,7 @@ package com.example.myapplication.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.myapplication.Models.ChatCancelModel
-import com.example.myapplication.Models.cancelStatus.CancelOrderResponse
+import com.example.myapplication.Models.cancelStatus.ChatCancelModel
 import com.example.myapplication.api_request_retrofit.BackEndApi
 import com.example.myapplication.api_request_retrofit.WebServiceClient
 
