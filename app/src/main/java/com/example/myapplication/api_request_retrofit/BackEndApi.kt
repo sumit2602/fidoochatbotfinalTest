@@ -20,7 +20,7 @@ interface BackEndApi {
     ): Call<ChatCancelModel>
 
     @FormUrlEncoded
-    @POST("chatbotGetOrderStatus.inc.php")
+    @POST("chatbotGetOrderDetails.inc.php")
     fun oredrStatusApi(
         @Field("accessToken") accessToken: String,
         @Field("accountId") accountId: String,

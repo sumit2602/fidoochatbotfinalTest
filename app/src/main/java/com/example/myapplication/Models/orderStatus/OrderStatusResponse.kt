@@ -12,6 +12,12 @@ data class OrderStatusResponse(
     val error: Boolean,
     @SerializedName("error_code")
     val errorCode: Int,
+    @SerializedName("isRefundAble")
+    val isRefundAble: Boolean,
+    @SerializedName("isShowCancel")
+    val isShowCancel: Boolean,
+    @SerializedName("messages")
+    val messages: List<String>,
     @SerializedName("orderId")
     val orderId: String,
     @SerializedName("order_status")

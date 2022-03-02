@@ -12,11 +12,11 @@ import retrofit2.Response
 
 class OrderStatusViewModel (application: Application) : AndroidViewModel(application) {
 
-    var orderStatusViewModel: MutableLiveData<OrderStatusResponse>? = null
+    var orderStatusViewModel: MutableLiveData<List<String>>? = null
     var failureResponse: MutableLiveData<String>? = null
 
     init {
-        orderStatusViewModel =  MutableLiveData<OrderStatusResponse>()
+        orderStatusViewModel =  MutableLiveData<List<String>>()
         failureResponse =  MutableLiveData<String>()
 
     }
@@ -33,7 +33,8 @@ class OrderStatusViewModel (application: Application) : AndroidViewModel(applica
             .enqueue(object : Callback<OrderStatusResponse> {
 
                 override fun onResponse(call: Call<OrderStatusResponse>, response: Response<OrderStatusResponse>) {
-                    orderStatusViewModel?.value = response.body()
+                    orderStatusViewModel?.value = response.body()?.messages
+
 
                 }
 
