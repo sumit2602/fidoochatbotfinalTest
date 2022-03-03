@@ -66,7 +66,11 @@ class MainActivity :AppCompatActivity() {
             // Log.d("sddffsddsds", Gson().toJson(it))
             if(it.orderStatus!="1"){
                 orderstatus.text = "Where is my order?"
-                orderconfirmStatus.text = "Where is my order?"
+                orderstatus.setOnClickListener{
+                    orderconfirmStatus.text = "Where is my order?"
+                }
+
+
             }
 
         }
