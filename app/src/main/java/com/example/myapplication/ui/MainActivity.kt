@@ -34,6 +34,7 @@ class MainActivity :AppCompatActivity() {
     lateinit var orderStatusAdapter: orderStatusAdapter
 
 
+
     var newsdata=ArrayList<String>()
     var botMsgdata = ArrayList<String>()
     var btnTextLogic = ArrayList<ButtonLogicModel>()
@@ -44,7 +45,19 @@ class MainActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        calendar = Calendar.getInstance()
+        simpleDateFormat = SimpleDateFormat("EE - dd LLL")
+        ////dd.LLL.yyyy HH:mm:ss aaa z
+        //EEEE.LLLL.yyyy KK:mm:ss aaa z
+        dateTime = simpleDateFormat.format(calendar.time).toString()
+        DateandTime.text = dateTime
+        simpleDateFormat1 = SimpleDateFormat(" KK:mm aaa")
+        dateTime = simpleDateFormat1.format(calendar.time).toString()
+        DateandTime2.text = dateTime
+       //  time1.text = dateTime
+//        time2.text = dateTime
+//        time3.text = dateTime
+//        time4.text = dateTime
         oderStatusViewModel = ViewModelProvider(this).get(OrderStatusViewModel::class.java)
         oderStatusViewModel?.cancelOrderApi ("9", "752b1a44c8f596b65b98305627481261", 103550)
         oderStatusViewModel?.orderStatusViewModel?.observe(this) {
@@ -60,28 +73,37 @@ class MainActivity :AppCompatActivity() {
 
 // main button Logic -----------------------------------------------------------------------------------------
 
-        buttonLogicViewModel = ViewModelProvider(this).get(ButtonLogicViewModel::class.java)
-        buttonLogicViewModel?.botmsgapiButtonLogic("10", "1a9eddfe5e5b2c75f6c15e739e05ab46", 100002)
-        buttonLogicViewModel?.btnLogicViewModel?.observe(this) {
-            // Log.d("sddffsddsds", Gson().toJson(it))
-            if(it.orderStatus!="1"){
-                orderstatus.text = "Where is my order?"
-                orderstatus.setOnClickListener{
-                    orderconfirmStatus.text = "Where is my order?"
-                }
-
-
-            }
-
-        }
+//        buttonLogicViewModel = ViewModelProvider(this).get(ButtonLogicViewModel::class.java)
+//        buttonLogicViewModel?.botmsgapiButtonLogic("10", "1a9eddfe5e5b2c75f6c15e739e05ab46", 100002)
+//        buttonLogicViewModel?.btnLogicViewModel?.observe(this) {
+//            // Log.d("sddffsddsds", Gson().toJson(it))
+//            if(it.orderStatus!="1"){
+//                orderstatus.text = "Where is my order?"
+//                orderstatus.setOnClickListener{
+//                    orderconfirmStatus.text = "Where is my order?"
+//                }
+//
+//
+//            }
+//
+//        }
         ///////////////////////////////////////////////
 
-
         orderstatus.setOnClickListener{
+            orderconfirmStatus.text = "Order not confirm yet"
             cancel.visibility = View.GONE
             orderstatus.visibility = View.GONE
             l2.visibility = View.VISIBLE
-            LayoutFeedback.visibility  =View.VISIBLE
+            DateandTime3.visibility = View.VISIBLE
+            DateandTime4.visibility = View.VISIBLE
+            tvlast.visibility = View.VISIBLE
+
+            simpleDateFormat1 = SimpleDateFormat(" KK:mm aaa")
+            dateTime = simpleDateFormat1.format(calendar.time).toString()
+           // DateandTime2.text = dateTime
+            DateandTime3.text = dateTime
+            DateandTime4.text = dateTime
+            //LayoutFeedback.visibility  =View.VISIBLE
             botmsgViewModel = ViewModelProvider(this).get(BotmsgViewModel::class.java)
             botmsgViewModel?.botmsgapi("9", "752b1a44c8f596b65b98305627481261", 101762)
             botmsgViewModel?.botMsgViewModel?.observe(this) {
@@ -96,9 +118,18 @@ class MainActivity :AppCompatActivity() {
 
 
         cancel.setOnClickListener{
+            orderconfirmStatus.text = "Cancel my order"
             cancel.visibility = View.GONE
             orderstatus.visibility = View.GONE
             l2.visibility = View.VISIBLE
+            DateandTime3.visibility = View.VISIBLE
+            DateandTime4.visibility = View.VISIBLE
+            tvlast.visibility = View.VISIBLE
+           // LayoutFeedback.visibility  =View.VISIBLE
+            simpleDateFormat1 = SimpleDateFormat(" KK:mm aaa")
+            dateTime = simpleDateFormat1.format(calendar.time).toString()
+            DateandTime3.text = dateTime
+            DateandTime4.text = dateTime
             viewModel = ViewModelProvider(this).get(ChatbotViewModel::class.java)
             viewModel?.cancelOrderApi("10", "1a9eddfe5e5b2c75f6c15e739e05ab46", 100002)
             viewModel?.cancelOrderResponse?.observe(this) {

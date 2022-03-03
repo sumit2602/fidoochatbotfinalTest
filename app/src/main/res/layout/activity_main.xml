@@ -9,6 +9,8 @@
     android:background="#E5E5E5"
     tools:context=".ui.MainActivity">
 
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
         android:layout_width="match_parent"
@@ -57,6 +59,14 @@
         android:layout_marginTop="24dp"
         android:text="Today - 13 Jan" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+       android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -133,6 +143,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
+
         </androidx.cardview.widget.CardView>
         <ImageView
             android:layout_width="wrap_content"
@@ -141,17 +152,25 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="19dp"
             android:src="@drawable/icon" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/DateandTime3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="67dp"
+        android:text="5:18 pm"
+        android:visibility="gone" />
 
-
-</LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recyclerView2"/>
     <TextView
-        android:visibility="visible"
-        android:id="@+id/DateandTime23"
+        android:visibility="gone"
+        android:id="@+id/DateandTime4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
@@ -185,7 +204,19 @@
             android:background="@drawable/option1"
             android:text="Thank you 😀"
             android:textSize="14dp" />
-    </LinearLayout>
 
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvlast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="40dp"
+        android:text="Conversation has been end."
+        android:visibility="invisible" />
+</LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
